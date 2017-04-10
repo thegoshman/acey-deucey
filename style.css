@@ -1,0 +1,28 @@
+h1 {
+	text-align: center;
+}
+
+button {
+	text-align: center;
+	center
+}
+
+.card1img {
+float:left;
+padding-left: 10%;
+}
+
+.card3img {
+float:left;
+padding-left: 10%;
+padding-right: 10%;
+}
+
+.card2img {
+float:right;
+padding-right: 10%;
+}
+
+#guess { 
+margin-top: 300px;
+text-align: center;}
