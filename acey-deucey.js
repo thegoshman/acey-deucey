@@ -81,18 +81,17 @@ button.addEventListener('click', function()
 			guess = String(guess.toLowerCase());
 			console.log(guess);
 			}
-		},750); 
-
 	setTimeout(function() 
 		{
-		guessbutton = document.createElement('button');
+		var guessbutton = document.createElement('button');
 		var guessbuttontext = document.createTextNode("Are you right?");
 		guessbutton.className = "guessbutton";
+		guessbutton.id = "guessbutton"
 		guessbutton.appendChild(guessbuttontext);
 		document.getElementById('guess').appendChild(guessbutton);
-		guessbutton = document.getElementById('guessbutton');
-
-		guessbutton.addEventListener('click', function() 
+		
+		var guessbuttonclick = document.getElementById('guessbutton');
+		guessbuttonclick.addEventListener('click', function() 
 			{
 			card3 = drawCard();
 			console.log(card3);
@@ -101,11 +100,14 @@ button.addEventListener('click', function()
 				card3 = drawCard ()
 				}
 		var src3 = deck[card3];	
-		var card3img = document.card3imgreateElement("img");
+		var card3img = document.createElement("img");
 		card3img.src = src3;
 		card3img.className = "card3img";
 		console.log(card3img);
 		document.getElementById('card3img').appendChild(card3img); 
 			});
 		},1500);
+
+		},750); 
+
 	});
