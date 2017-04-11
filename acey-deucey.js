@@ -56,7 +56,7 @@ deckvals = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,
 
 function drawCard() 
 	{
-	var card =  parseInt(Math.random() * 26);
+	var card =  parseInt(Math.random() * 52);
 	return card;
 	}
 
@@ -110,7 +110,10 @@ button.addEventListener('click', function()
 			guess = String(guess.toLowerCase());
 			console.log(guess);
 			}
-	setTimeout(function() 
+
+/*Creates a button that the user can click after they guess to see if they were right or wrong - would like to put this on an alert rather than just a delay eventually*/
+		
+setTimeout(function() 
 		{
 		var guessbutton = document.createElement('button');
 		var guessbuttontext = document.createTextNode("Are you right?");
@@ -119,6 +122,8 @@ button.addEventListener('click', function()
 		guessbutton.appendChild(guessbuttontext);
 		document.getElementById('guess').appendChild(guessbutton);
 		
+/*when the new button is clicked, draw a third card and evaulate it */ 
+
 		var guessbuttonclick = document.getElementById('guessbutton');
 		guessbuttonclick.addEventListener('click', function() 
 			{
@@ -135,6 +140,9 @@ button.addEventListener('click', function()
 		console.log(card3img);
 		console.log(deckvals[card3]);
 		document.getElementById('card3img').appendChild(card3img);
+
+/*If the guess is "inside" the new card has to be between the other two cards. If the guess is "outside" the new card has to be outside the other two cards. If it's equal to the first or second card in value, it's an automatic lose.*/			
+			
 		if ((guess === "inside") && (((deckvals[card3] > deckvals[card2]) && (deckvals[card3] < deckvals[card1])) || ((deckvals[card3] < deckvals[card2]) && (deckvals[card3] > deckvals[card1])))) 
 			{
 			var result = document.getElementById('result');
