@@ -25,6 +25,8 @@ deck = ['https://upload.wikimedia.org/wikipedia/commons/3/36/Playing_card_club_A
 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Playing_card_diamond_Q.svg', 
 'https://upload.wikimedia.org/wikipedia/commons/7/78/Playing_card_diamond_K.svg']
 
+deckvals = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
+
 function drawCard() 
 	{
 	var card =  parseInt(Math.random() * 26);
@@ -93,7 +95,7 @@ button.addEventListener('click', function()
 		var guessbuttonclick = document.getElementById('guessbutton');
 		guessbuttonclick.addEventListener('click', function() 
 			{
-			card3 = drawCard();
+			var card3 = drawCard();
 			console.log(card3);
 			while ((card3 === card1) || (card3 === card2)) 
 				{
@@ -104,10 +106,29 @@ button.addEventListener('click', function()
 		card3img.src = src3;
 		card3img.className = "card3img";
 		console.log(card3img);
-		document.getElementById('card3img').appendChild(card3img); 
+		console.log(deckvals[card3]);
+		document.getElementById('card3img').appendChild(card3img);
+		if ((guess === "inside") && (((deckvals[card3] > deckvals[card2]) && (deckvals[card3] < deckvals[card1])) || ((deckvals[card3] < deckvals[card2]) && (deckvals[card3] > deckvals[card1])))) 
+			{
+			var result = document.getElementById('result');
+			result.innerHTML = `You guessed ${guess}. You win!`;
+			console.log("You win!");
+			} 
+		else if ((guess === "outside") && (((deckvals[card3] < deckvals[card2]) && (deckvals[card3] < deckvals[card1])) || ((deckvals[card3] > deckvals[card2]) && (deckvals[card3] > deckvals[card1])))) 
+			{
+			var result = document.getElementById('result');
+			result.innerHTML = `You guessed ${guess}. You win!`;
+			console.log("You win!");
+			}
+		else
+			{
+			var result = document.getElementById('result');
+			result.innerHTML = `You guessed ${guess}. You lose!`;
+			console.log("You lose!");
+			}
 			});
-		},1500);
+		},1200);
 
-		},750); 
+	},750); 
 
 	});
