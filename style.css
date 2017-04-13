@@ -4,7 +4,10 @@ h1 {
 
 button {
 	text-align: center;
-	center
+}
+
+.startbutton {
+	text-align: center;
 }
 
 .card1img {
