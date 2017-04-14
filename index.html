@@ -4,14 +4,15 @@
  </head> 
 <body> 
 	<h1>Acey Deucey</h1>  
-		<p class="instructions">The game will show you two cards. Guess whether a third card will be inside or outside of the first two.</p>
-		<P>Note: If the third card equals one of the other two in value, it's an automatic loss. For now, aces are always low.</p>
  <div id="startbutton"><button id="gamestart">Click me to start!</button></div>
   <p>Your cards are...</p> 
-  <span id="card1img"></span>
+  <span id="card1img"><img class="card1img" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Card_back_13.svg" id="card1image"></span>
   <span id="card3img"></span>
-  <span id="card2img"></span>
-  <div id="guess"></div>
+  <span id="card2img"><img  class="card2img" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Card_back_13.svg" id="card2image"></span>
+  <div id="guess"><p>Click each of the cards above to reveal. Then click the button below to guess whether the third card will be inside or outside the other two.</p>
+  	<P>Note: If the third card equals one of the other two in value, it's an automatic loss. For now, aces are always low.</p>
+<button id="inside">Inside</button><button id="outside">Outside</button.</div><br />
+<div><button id="guessbutton">Are you right?</button></div> 
   <div id="result"></div>
 <script src="acey-deucey.js"></script> 
 </body> 

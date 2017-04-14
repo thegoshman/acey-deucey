@@ -27,7 +27,7 @@ padding-right: 10%;
 }
 
 #guess { 
-margin-top: 300px;
+margin-top: 400px;
 text-align: center;}
 
 .result {
@@ -37,5 +37,5 @@ text-align: center;}
 
 .instructions {
 	font-style: italic;
-	font-size: 2em;
+	font-size: 1.2	em;
 }
